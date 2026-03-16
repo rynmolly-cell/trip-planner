@@ -66,7 +66,15 @@ VITE_SUPABASE_ANON_KEY=your-anon-key
 
 To share links with friends, the app must be hosted publicly. Localhost only works on your machine.
 
-**Option 1: Vercel (recommended)**
+**Option 1: GitHub Pages (recommended, no build errors)**
+
+1. Push your code to GitHub
+2. Go to your repo → **Settings** → **Pages**
+3. Under "Build and deployment", set **Source** to **GitHub Actions**
+4. Push the `main` branch – the workflow builds and deploys automatically
+5. Your app goes live at `https://YOUR_USERNAME.github.io/trip-planner/`
+
+**Option 2: Vercel**
 
 1. Push your code to GitHub
 2. Go to [vercel.com](https://vercel.com) → Import your repo
