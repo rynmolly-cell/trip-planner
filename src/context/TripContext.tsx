@@ -6,13 +6,7 @@ import {
 } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import type { Trip } from "../types/trip";
-import { createTrip, createDay } from "../utils/tripFactory";
-import { createDolomites2026Trip } from "../data/dolomites2026";
-
-const DEFAULT_TRIPS: Trip[] = (() => {
-  const t = createDolomites2026Trip();
-  return [t];
-})();
+import { createTrip } from "../utils/tripFactory";
 
 interface TripContextValue {
   trips: Trip[];
@@ -133,7 +127,7 @@ export function TripProvider({ children }: { children: ReactNode }) {
         };
       });
       setTrips((prev) => [...prev, ...withNewIds]);
-      setActiveTripId(withNewIds[0].id);
+      setActiveTripId(withNewIds[0]!.id);
     },
     [setTrips, setActiveTripId]
   );

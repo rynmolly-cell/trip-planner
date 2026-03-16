@@ -16,8 +16,9 @@ const defaultIcon = L.divIcon({
 function MapUpdater({ waypoints }: { waypoints: RouteWaypoint[] }) {
   const map = useMap();
   const hasPoints = waypoints.length > 0;
-  if (hasPoints && waypoints.length === 1) {
-    map.setView([waypoints[0].lat, waypoints[0].lng], 12);
+  const first = waypoints[0];
+  if (hasPoints && first) {
+    map.setView([first.lat, first.lng], 12);
   } else if (hasPoints) {
     const bounds = L.latLngBounds(
       waypoints.map((w) => [w.lat, w.lng] as [number, number])
@@ -37,14 +38,15 @@ interface TripMapProps {
 
 export function TripMap({
   waypoints,
-  editable = false,
+  editable: _editable = false,
 }: TripMapProps) {
+  const first = waypoints[0];
   const defaultCenter: [number, number] = useMemo(
     () =>
-      waypoints.length > 0
-        ? [waypoints[0].lat, waypoints[0].lng]
+      waypoints.length > 0 && first
+        ? [first.lat, first.lng]
         : [-41.5, 173],
-    [waypoints]
+    [waypoints, first]
   );
 
   return (

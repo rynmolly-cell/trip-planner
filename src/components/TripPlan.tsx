@@ -2,10 +2,6 @@ import { useTripContext } from "../context/TripContext";
 import type { RouteWaypoint } from "../types/trip";
 import styles from "./TripPlan.module.css";
 
-function generateId() {
-  return crypto.randomUUID?.() ?? Math.random().toString(36).slice(2, 11);
-}
-
 export function TripPlan({ readOnly = false }: { readOnly?: boolean }) {
   const { activeTrip, updateTrip } = useTripContext();
 
@@ -20,31 +16,6 @@ export function TripPlan({ readOnly = false }: { readOnly?: boolean }) {
     };
 
   const waypoints = activeTrip.routeWaypoints ?? [];
-
-  const addWaypoint = () => {
-    if (readOnly) return;
-    updateTrip(activeTrip.id, {
-      routeWaypoints: [
-        ...waypoints,
-        { lat: 0, lng: 0, label: `Waypoint ${waypoints.length + 1}` },
-      ],
-    });
-  };
-
-  const updateWaypoint = (i: number, upd: Partial<RouteWaypoint>) => {
-    if (readOnly) return;
-    const next = waypoints.map((w, j) =>
-      j === i ? { ...w, ...upd } : w
-    );
-    updateTrip(activeTrip.id, { routeWaypoints: next });
-  };
-
-  const removeWaypoint = (i: number) => {
-    if (readOnly) return;
-    updateTrip(activeTrip.id, {
-      routeWaypoints: waypoints.filter((_, j) => j !== i),
-    });
-  };
 
   return (
     <div className={styles.plan}>

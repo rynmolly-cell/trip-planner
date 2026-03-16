@@ -1,5 +1,4 @@
 import { useTripContext } from "../context/TripContext";
-import { createDolomites2026Trip } from "../data/dolomites2026";
 import styles from "./TabBar.module.css";
 
 export function TabBar() {
@@ -8,7 +7,6 @@ export function TabBar() {
     activeTripId,
     setActiveTripId,
     addTrip,
-    addTripFromTemplate,
     deleteTrip,
   } = useTripContext();
 
