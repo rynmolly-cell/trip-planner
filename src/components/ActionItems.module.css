@@ -1,0 +1,114 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.item.done .textInput {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.item input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--accent-mint-dark);
+  cursor: pointer;
+}
+
+.itemContent {
+  flex: 1;
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.textInput {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.35rem 0.5rem;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+}
+
+.textInput:focus {
+  outline: none;
+}
+
+.dueInput {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.remove {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  line-height: 1;
+}
+
+.remove:hover {
+  color: var(--danger);
+  background: var(--accent-peach);
+}
+
+.add {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background: var(--accent-mint);
+  color: var(--accent-mint-dark);
+  border: 1px solid var(--accent-mint-dark);
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.add:hover {
+  background: var(--accent-mint-dark);
+  color: white;
+}

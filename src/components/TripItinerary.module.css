@@ -1,0 +1,225 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.distanceSummary {
+  background: var(--accent-mint);
+  border: 1px solid var(--accent-mint-dark);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.summaryTitle {
+  margin: 0 0 var(--spacing-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.summaryTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.summaryTable th,
+.summaryTable td {
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.summaryTable th {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.summaryTable tfoot td {
+  border-bottom: none;
+  border-top: 2px solid var(--accent-mint-dark);
+  padding-top: 0.6rem;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.dayCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.dayHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.dayNum {
+  font-weight: 600;
+  color: var(--accent-lavender-dark);
+}
+
+.removeBtn {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.removeBtn:hover {
+  color: var(--danger);
+  background: var(--accent-peach);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.grid input {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+}
+
+.notesLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: var(--spacing-sm);
+}
+
+.notesLabel textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.addDay {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background: var(--accent-lavender);
+  color: var(--accent-lavender-dark);
+  border: 1px solid var(--accent-lavender-dark);
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.addDay:hover {
+  background: var(--accent-lavender-dark);
+  color: white;
+}
+
+.transportReadOnly {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.transportReadOnly strong {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.longDayFlag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8b4513;
+  background: var(--accent-peach);
+  border: 1px solid #d4a574;
+  border-radius: var(--radius-sm);
+}
+
+.longDayRecommendation {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: #fef9e7;
+  border-left: 4px solid #f1c40f;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.longDayRecommendation strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+  color: #8b6914;
+}
+
+.longDayRecommendation a {
+  color: var(--accent-lavender-dark);
+  text-decoration: none;
+}
+
+.longDayRecommendation a:hover {
+  text-decoration: underline;
+}
+
+.summaryTable .longDayBadge {
+  display: inline-flex;
+  margin-left: 0.35rem;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #8b4513;
+  background: var(--accent-peach);
+  border-radius: var(--radius-sm);
+}
+
+.longDayRow {
+  background: rgba(254, 249, 231, 0.5);
+}
+
+.longDayRow td {
+  border-bottom-color: rgba(241, 196, 15, 0.3);
+}
