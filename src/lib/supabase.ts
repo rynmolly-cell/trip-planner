@@ -29,7 +29,7 @@ export async function shareTrip(trip: Trip): Promise<string | null> {
     .insert({ id: crypto.randomUUID(), data: trip })
     .select("id")
     .single();
-  if (error) return null;
+  if (error || !data) return null;
   return `${window.location.origin}/share/${data.id}`;
 }
 
